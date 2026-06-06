@@ -1,6 +1,6 @@
 # Micrograd: Scalar-Valued Autograd Engine & Neural Networks 🧠
 
-A production-clean implementation of a scalar-valued automatic differentiation engine built completely from scratch. This repository serves as a personal deep-learning playground demonstrating foundational mastery of backpropagation, computational graphs, and neural network mechanics.
+A tiny Autograd engine (with a bite! :)). Implements backpropagation (reverse-mode autodiff) over a dynamically built DAG and a small neural networks library on top of it with a PyTorch-like API. Both are tiny, with about 100 and 50 lines of code respectively. The DAG only operates over scalar values, so e.g. we chop up each neuron into all of its individual tiny adds and multiplies. However, this is enough to build up entire deep neural nets doing binary classification, as the demo notebook shows. Potentially useful for educational purposes.
 
 Inspired by Andrej Karpathy's _Zero to Hero_ curriculum, this project bypasses high-level abstractions to construct the core mathematical building blocks of deep learning from the ground up.
 
@@ -15,15 +15,6 @@ Inspired by Andrej Karpathy's _Zero to Hero_ curriculum, this project bypasses h
 
 ---
 
-## 📂 Repository Architecture
-
-The repository features a streamlined, root-level structural layout for fast discovery and direct execution:
-
-- `*.ipynb` — Interactive Jupyter Notebooks detailing step-by-step mathematical proofs, DAG graphs, and optimization loops.
-- `.gitignore` — Clean baseline tracking configured to safely omit workspace artifacts like `.ipynb_checkpoints/`.
-
----
-
 ## 🛠️ Prerequisites & Core Dependencies
 
 The codebase runs on **Python 3.x** and relies on a focused stack of mathematical and visualization libraries:
@@ -33,21 +24,6 @@ The codebase runs on **Python 3.x** and relies on a focused stack of mathematica
 - `numpy` — For vectorized evaluation and data structural operations.
 - `matplotlib` — For tracking and plotting training loss convergence curves.
 
-### Environment Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com
-   cd inner
-   ```
-
-2. Install the required dependencies:
-   ```bash
-   pip install torch graphviz numpy matplotlib
-   ```
-
----
 
 ## 📊 Core Concepts Demonstrated
 
